@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  bot:
+    build: ./bot
+    restart: always
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - WEBHOOK_URL=${WEBHOOK_URL}  # utilise l'URL de l'autre service
+
+  webhook:
+    build: ./webhook
+    restart: always
+    ports:
+      - "5000:5000"
