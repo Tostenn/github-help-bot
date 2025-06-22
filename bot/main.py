@@ -35,7 +35,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 # === CONFIGURATION ===
 DATA_FILE = "github_users.json"
-WEBHOOK_URL = "https://TON_DOMAINE/github/webhook"  # URL de ton serveur Flask
+WEBHOOK_URL = os.getenv("WEBHOOK_URL")  # Remplace par ton URL de webhook
 
 # === UTILITAIRES ===
 def load_data():
